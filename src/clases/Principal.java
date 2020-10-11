@@ -8,6 +8,7 @@ public class Principal {
         System.out.println("Robin es gay");
         System.out.println("Con un carajo como que no puedes enviar nada tu");
         System.out.println("Holis");
+        System.out.println("jeje robin se te paso");
         System.out.println("PTM");
         System.out.println("gracias");
         System.out.println("Hola, si pude, gracias.");
