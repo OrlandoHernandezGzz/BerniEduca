@@ -61,7 +61,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 152, 145, 147));
 
-        jButton5.setText("jButton5");
+        jButton5.setText("Regresar");
         jButton5.setBorderPainted(false);
         jButton5.setContentAreaFilled(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +69,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, -1, 40));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 80, 50));
 
         fondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu_principal.png"))); // NOI18N
         getContentPane().add(fondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
