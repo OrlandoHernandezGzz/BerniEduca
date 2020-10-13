@@ -1,6 +1,5 @@
 package ventanas;
 
-import clases.Conexion;
 import clases.InicioSesion;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -13,6 +12,11 @@ public class InicioDeSesion extends javax.swing.JFrame {
      */
     public InicioDeSesion() {
         initComponents();
+        //PARA QUE EL USUARIO NO PUEDA HACER GRANDE LA PANTALLA DEL LOGIN.
+        setResizable(false);
+        //PARA QUE LA PANTALLA APAREZCA EN EL MEDIO.
+        setLocationRelativeTo(null);
+
     }
 
     @SuppressWarnings("unchecked")
@@ -24,13 +28,14 @@ public class InicioDeSesion extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JPasswordField();
         btnIngresar = new javax.swing.JButton();
         btnRegistrar = new javax.swing.JButton();
-        fondo = new javax.swing.JLabel();
+        fondoLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtUsuario.setBorder(null);
         txtUsuario.setMaximumSize(new java.awt.Dimension(20, 50));
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -40,6 +45,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 235, 171, 34));
 
         txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtContraseña.setBorder(null);
         txtContraseña.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtContraseñaActionPerformed(evt);
@@ -52,6 +58,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         btnIngresar.setAutoscrolls(true);
         btnIngresar.setBorderPainted(false);
         btnIngresar.setContentAreaFilled(false);
+        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIngresarActionPerformed(evt);
@@ -61,7 +68,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
         btnRegistrar.setBorderPainted(false);
         btnRegistrar.setContentAreaFilled(false);
-        btnRegistrar.setOpaque(false);
+        btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
@@ -69,8 +76,8 @@ public class InicioDeSesion extends javax.swing.JFrame {
         });
         jPanel1.add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(634, 387, 136, 30));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login.png"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        fondoLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/login.png"))); // NOI18N
+        jPanel1.add(fondoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,7 +89,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
 
         pack();
@@ -158,7 +165,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.JLabel fondo;
+    private javax.swing.JLabel fondoLogin;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtUsuario;
