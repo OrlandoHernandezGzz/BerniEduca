@@ -14,6 +14,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         //PARA QUE LA PANTALLA APAREZCA EN EL MEDIO.
         setLocationRelativeTo(null);
         setTitle("BerniEduca - Iniciar Sesión");
+        setSize(805,475);
     }
 
     @SuppressWarnings("unchecked")
