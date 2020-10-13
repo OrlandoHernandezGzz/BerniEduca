@@ -32,25 +32,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnGAyuda.setBorder(null);
         btnGAyuda.setBorderPainted(false);
         btnGAyuda.setContentAreaFilled(false);
-        btnGAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGAyuda.setFocusPainted(false);
         getContentPane().add(btnGAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 152, 145, 148));
 
         btnGLecciones.setBorder(null);
         btnGLecciones.setBorderPainted(false);
         btnGLecciones.setContentAreaFilled(false);
-        btnGLecciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGLecciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGLecciones.setFocusPainted(false);
         getContentPane().add(btnGLecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 153, 145, 148));
 
         btnGPerfil.setBorder(null);
         btnGPerfil.setBorderPainted(false);
         btnGPerfil.setContentAreaFilled(false);
-        btnGPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGPerfil.setFocusPainted(false);
-        btnGPerfil.setOpaque(false);
         getContentPane().add(btnGPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 150, 145, 150));
 
         btnGAbout.setBorder(null);
