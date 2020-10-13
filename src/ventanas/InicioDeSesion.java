@@ -54,6 +54,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         btnIngresar.setBackground(new java.awt.Color(124, 0, 124));
         btnIngresar.setToolTipText("");
         btnIngresar.setAutoscrolls(true);
+        btnIngresar.setBorder(null);
         btnIngresar.setBorderPainted(false);
         btnIngresar.setContentAreaFilled(false);
         btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -65,6 +66,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         });
         jPanel1.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(593, 280, 138, 41));
 
+        btnRegistrar.setBorder(null);
         btnRegistrar.setBorderPainted(false);
         btnRegistrar.setContentAreaFilled(false);
         btnRegistrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
