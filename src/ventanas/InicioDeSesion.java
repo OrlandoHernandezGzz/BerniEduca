@@ -7,9 +7,6 @@ import java.util.Date;
 
 public class InicioDeSesion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InicioDeSesion
-     */
     public InicioDeSesion() {
         initComponents();
         //PARA QUE EL USUARIO NO PUEDA HACER GRANDE LA PANTALLA DEL LOGIN.
@@ -108,7 +105,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         //CREAMOS UNA VARIABLE QUE CAPTURE LA FECHA Y HORA DE LA COMPUTADORA.
         Date date = new Date();
         DateFormat fechaHora = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        
+
         //INSTANCIAMOS NUESTRA CLASE INICIOSESION PARA PASARLE POR PARAMETROS LO QUE DIJITE EL USUARIO. 
         InicioSesion iniciosesion = new InicioSesion(usuario, contraseña, fechaHora.format(date));
         //LLAMAMOS EL METODO INGRESAR.
@@ -159,7 +156,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InicioDeSesion().setVisible(true);
-                
+
             }
         });
     }
