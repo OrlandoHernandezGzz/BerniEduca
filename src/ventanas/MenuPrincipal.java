@@ -18,48 +18,108 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnGAyuda = new javax.swing.JButton();
+        btnGLecciones = new javax.swing.JButton();
+        btnGPerfil = new javax.swing.JButton();
+        btnGAbout = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
+        btnPerfil = new javax.swing.JButton();
+        btnLecciones = new javax.swing.JButton();
+        btnAyuda = new javax.swing.JButton();
+        btnAbout = new javax.swing.JButton();
         fondoMenu = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton1.setFocusPainted(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 152, 145, 148));
+        btnGAyuda.setBorderPainted(false);
+        btnGAyuda.setContentAreaFilled(false);
+        btnGAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGAyuda.setFocusPainted(false);
+        getContentPane().add(btnGAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 152, 145, 148));
 
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton2.setFocusPainted(false);
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 153, 145, 148));
+        btnGLecciones.setBorder(null);
+        btnGLecciones.setBorderPainted(false);
+        btnGLecciones.setContentAreaFilled(false);
+        btnGLecciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGLecciones.setFocusPainted(false);
+        getContentPane().add(btnGLecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 153, 145, 148));
 
-        jButton3.setBorderPainted(false);
-        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jButton3.setFocusPainted(false);
-        jButton3.setOpaque(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 150, 145, 150));
+        btnGPerfil.setBorder(null);
+        btnGPerfil.setBorderPainted(false);
+        btnGPerfil.setContentAreaFilled(false);
+        btnGPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnGPerfil.setFocusPainted(false);
+        btnGPerfil.setOpaque(false);
+        getContentPane().add(btnGPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 150, 145, 150));
 
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 152, 145, 147));
+        btnGAbout.setBorder(null);
+        btnGAbout.setBorderPainted(false);
+        btnGAbout.setContentAreaFilled(false);
+        btnGAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnGAbout.setFocusable(false);
+        getContentPane().add(btnGAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 152, 145, 147));
 
-        jButton5.setText("Regresar");
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnRegresar.setFont(new java.awt.Font("Javanese Text", 1, 14)); // NOI18N
+        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegresar.setText("Regresar");
+        btnRegresar.setAlignmentY(0.0F);
+        btnRegresar.setBorder(null);
+        btnRegresar.setBorderPainted(false);
+        btnRegresar.setContentAreaFilled(false);
+        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRegresar.setFocusPainted(false);
+        btnRegresar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnRegresar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnRegresarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 80, 50));
+        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 358, 56, 50));
+
+        btnPerfil.setBorderPainted(false);
+        btnPerfil.setContentAreaFilled(false);
+        btnPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerfilActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(54, 284, 134, 25));
+
+        btnLecciones.setBorderPainted(false);
+        btnLecciones.setContentAreaFilled(false);
+        btnLecciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLecciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLeccionesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnLecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(241, 285, 134, 25));
+
+        btnAyuda.setBorder(null);
+        btnAyuda.setBorderPainted(false);
+        btnAyuda.setContentAreaFilled(false);
+        btnAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAyudaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 285, 132, 26));
+
+        btnAbout.setBorder(null);
+        btnAbout.setBorderPainted(false);
+        btnAbout.setContentAreaFilled(false);
+        btnAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAbout.setFocusPainted(false);
+        btnAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAboutActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 283, 132, 26));
 
         fondoMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/menu_principal.png"))); // NOI18N
         getContentPane().add(fondoMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -67,9 +127,25 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnRegresarActionPerformed
+
+    private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPerfilActionPerformed
+
+    private void btnLeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeccionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLeccionesActionPerformed
+
+    private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAyudaActionPerformed
+
+    private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAboutActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,11 +183,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbout;
+    private javax.swing.JButton btnAyuda;
+    private javax.swing.JButton btnGAbout;
+    private javax.swing.JButton btnGAyuda;
+    private javax.swing.JButton btnGLecciones;
+    private javax.swing.JButton btnGPerfil;
+    private javax.swing.JButton btnLecciones;
+    private javax.swing.JButton btnPerfil;
+    private javax.swing.JButton btnRegresar;
     private javax.swing.JLabel fondoMenu;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     // End of variables declaration//GEN-END:variables
 }
