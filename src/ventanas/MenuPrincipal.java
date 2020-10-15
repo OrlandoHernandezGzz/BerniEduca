@@ -2,9 +2,12 @@ package ventanas;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 public class MenuPrincipal extends javax.swing.JFrame {
     //VARIABLES DE BARRA
@@ -31,6 +34,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         barra.add(menu_ayuda);
         barra.add(menu_cerrar_sesion);
         setJMenuBar(barra);
+        
+        //EVENTOS DEL MENU
+        menuItem_about.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent evt){
+                JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
+            }
+        });
     }
     
     public MenuPrincipal() {
@@ -41,7 +51,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
         //PARA QUE LA PANTALLA APAREZCA EN EL MEDIO.
         setLocationRelativeTo(null);
         setTitle("BerniEduca - Menú Principal");
-
     }
 
     //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
@@ -59,7 +68,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGLecciones = new javax.swing.JButton();
         btnGPerfil = new javax.swing.JButton();
         btnGAbout = new javax.swing.JButton();
-        btnRegresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
         btnPerfil = new javax.swing.JButton();
         btnLecciones = new javax.swing.JButton();
         btnAyuda = new javax.swing.JButton();
@@ -98,23 +107,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGAbout.setFocusable(false);
         getContentPane().add(btnGAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 152, 145, 147));
 
-        btnRegresar.setFont(new java.awt.Font("Javanese Text", 1, 14)); // NOI18N
-        btnRegresar.setForeground(new java.awt.Color(255, 255, 255));
-        btnRegresar.setText("Regresar");
-        btnRegresar.setAlignmentY(0.0F);
-        btnRegresar.setBorder(null);
-        btnRegresar.setBorderPainted(false);
-        btnRegresar.setContentAreaFilled(false);
-        btnRegresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegresar.setFocusPainted(false);
-        btnRegresar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnRegresar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        btnRegresar.addActionListener(new java.awt.event.ActionListener() {
+        btnSalir.setFont(new java.awt.Font("Javanese Text", 1, 14)); // NOI18N
+        btnSalir.setForeground(new java.awt.Color(255, 255, 255));
+        btnSalir.setText("Salir");
+        btnSalir.setAlignmentY(0.0F);
+        btnSalir.setBorder(null);
+        btnSalir.setBorderPainted(false);
+        btnSalir.setContentAreaFilled(false);
+        btnSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSalir.setFocusPainted(false);
+        btnSalir.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        btnSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegresarActionPerformed(evt);
+                btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 358, 56, 50));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(53, 358, 60, 50));
 
         btnPerfil.setBorderPainted(false);
         btnPerfil.setContentAreaFilled(false);
@@ -165,9 +173,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegresarActionPerformed
+    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegresarActionPerformed
+    }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
         // TODO add your handling code here:
@@ -229,7 +237,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnGPerfil;
     private javax.swing.JButton btnLecciones;
     private javax.swing.JButton btnPerfil;
-    private javax.swing.JButton btnRegresar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel fondoMenu;
     // End of variables declaration//GEN-END:variables
 }

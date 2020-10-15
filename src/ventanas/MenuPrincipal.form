@@ -100,7 +100,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRegresar">
+    <Component class="javax.swing.JButton" name="btnSalir">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Javanese Text" size="14" style="1"/>
@@ -108,7 +108,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Regresar"/>
+        <Property name="text" type="java.lang.String" value="Salir"/>
         <Property name="alignmentY" type="float" value="0.0"/>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="null"/>
@@ -119,15 +119,14 @@
           <Color id="Hand Cursor"/>
         </Property>
         <Property name="focusPainted" type="boolean" value="false"/>
-        <Property name="horizontalAlignment" type="int" value="2"/>
         <Property name="horizontalTextPosition" type="int" value="4"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegresarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalirActionPerformed"/>
       </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="57" y="358" width="56" height="50"/>
+          <AbsoluteConstraints x="53" y="358" width="60" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
