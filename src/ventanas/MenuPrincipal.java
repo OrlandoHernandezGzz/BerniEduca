@@ -2,15 +2,46 @@ package ventanas;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class MenuPrincipal extends javax.swing.JFrame {
-
+    //VARIABLES DE BARRA
+    JMenuBar barra;
+    JMenu menu_perfil;
+    JMenu menu_ayuda;
+    JMenu menu_cerrar_sesion;
+    JMenuItem menuItem_ver_actividad;
+    JMenuItem menuItem_tutorial;
+    JMenuItem menuItem_about;
+    
+    private void crearMenu(){
+        barra = new JMenuBar();
+        menu_perfil = new JMenu("Perfil");
+        menu_ayuda = new JMenu("Ayuda");
+        menu_cerrar_sesion = new JMenu("Cerrar Sesión");
+        menuItem_ver_actividad = new JMenuItem("Ver Actividad");
+        menuItem_tutorial = new JMenuItem("Tutorial");
+        menuItem_about = new JMenuItem("Acerca de Nosotros");
+        menu_perfil.add(menuItem_ver_actividad);
+        menu_ayuda.add(menuItem_tutorial);
+        menu_ayuda.add(menuItem_about);
+        barra.add(menu_perfil);
+        barra.add(menu_ayuda);
+        barra.add(menu_cerrar_sesion);
+        setJMenuBar(barra);
+    }
+    
     public MenuPrincipal() {
+        crearMenu();
         initComponents();
         //PARA QUE EL USUARIO NO PUEDA HACER GRANDE LA PANTALLA DEL LOGIN.
         setResizable(false);
         //PARA QUE LA PANTALLA APAREZCA EN EL MEDIO.
         setLocationRelativeTo(null);
+        setTitle("BerniEduca - Menú Principal");
+
     }
 
     //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
