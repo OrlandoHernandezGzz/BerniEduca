@@ -10,6 +10,10 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 
 public class MenuPrincipal extends javax.swing.JFrame {
+
+    //VARIABLE PARA IDENTIFICAR EL USUARIO QUE INICIO SESION.
+    String user = InicioDeSesion.usuario;
+
     //VARIABLES DE BARRA
     JMenuBar barra;
     JMenu menu_perfil;
@@ -18,8 +22,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     JMenuItem menuItem_ver_actividad;
     JMenuItem menuItem_tutorial;
     JMenuItem menuItem_about;
-    
-    private void crearMenu(){
+
+    private void crearMenu() {
         barra = new JMenuBar();
         menu_perfil = new JMenu("Perfil");
         menu_ayuda = new JMenu("Ayuda");
@@ -34,15 +38,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
         barra.add(menu_ayuda);
         barra.add(menu_cerrar_sesion);
         setJMenuBar(barra);
-        
+
         //EVENTOS DEL MENU
-        menuItem_about.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent evt){
+        menuItem_about.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
                 JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
             }
         });
     }
-    
+
     public MenuPrincipal() {
         crearMenu();
         initComponents();
@@ -50,7 +55,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setResizable(false);
         //PARA QUE LA PANTALLA APAREZCA EN EL MEDIO.
         setLocationRelativeTo(null);
-        setTitle("BerniEduca - Menú Principal");
+        setTitle("BerniEduca - Bienvenido a Menú Principal " + user);
     }
 
     //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
@@ -222,6 +227,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MenuPrincipal().setVisible(true);
             }

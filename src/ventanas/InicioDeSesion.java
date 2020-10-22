@@ -9,6 +9,9 @@ import java.util.Date;
 
 public class InicioDeSesion extends javax.swing.JFrame {
 
+    //ATRIBUTO ESTATICO DE LA GUI INICIOSESION PARA PASAR SU VALOR AL MENU PRINCIPAL.
+    public static String usuario;
+
     public InicioDeSesion() {
         initComponents();
         //PARA QUE EL USUARIO NO PUEDA HACER GRANDE LA PANTALLA DEL LOGIN.
@@ -113,7 +116,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
         //CREAMOS VARIABLES QUE GUARDARA LO QUE DIGITE NUESTRO USUARIO EN LAS CAJAS DE TEXTO
-        String usuario = txtUsuario.getText().trim();
+        usuario = txtUsuario.getText().trim();
         String contraseña = txtContraseña.getText().trim();
         //CREAMOS UNA VARIABLE QUE CAPTURE LA FECHA Y HORA DE LA COMPUTADORA.
         Date date = new Date();
@@ -121,10 +124,16 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
         //INSTANCIAMOS NUESTRA CLASE INICIOSESION PARA PASARLE POR PARAMETROS LO QUE DIJITE EL USUARIO. 
         InicioSesion iniciosesion = new InicioSesion(usuario, contraseña, fechaHora.format(date));
+
         //LLAMAMOS EL METODO INGRESAR.
         iniciosesion.ingresar();
-
-        //PARA BORRAR LAS CASILLAS CADA VEZ QUE DE CLICK ESE BOTON.
+        
+        //SI LLEGA A ENTRAR CON SU CUENTA, VA CERRAR LA INTERFAZ DE LOGIN.
+        if(InicioSesion.cerrarLogin){
+            dispose();
+        }
+        
+        //PARA BORRAR LAS CASILLAS CADA VEZ QUE DE CLIC ESE BOTON.
         txtUsuario.setText("");
         txtContraseña.setText("");
         txtUsuario.requestFocus();  //para que el cursor aparezca en la caja de usuario.
@@ -167,6 +176,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new InicioDeSesion().setVisible(true);
 
