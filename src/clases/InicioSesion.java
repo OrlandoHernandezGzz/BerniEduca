@@ -40,17 +40,17 @@ public class InicioSesion extends Usuario {
             try {
                 //PREPARAMOS SENTENCIA PARA MANDAR A CONSULTAR A NUESTRA BASE DE DATOS.
                 PreparedStatement pst = conexion.prepareStatement(getUserPass);
-                //LINEA 49 Y 50 QUIERE DECIR QUE LO QUE NOS INTRODUZCA EL USUARIO ESO LO BUSQUE EN NUESTRA BASE DE DATOS.
+                //LINEA 44 Y 45 QUIERE DECIR QUE LO QUE NOS INTRODUZCA EL USUARIO ESO LO BUSQUE EN NUESTRA BASE DE DATOS.
                 pst.setString(1, usuario);
                 pst.setString(2, password);
                 //CREAMOS VARIABLE TIPO RESULSET QUE ALMACENARA TODO LOS QUERY ALMACENADOS.
                 ResultSet rs = pst.executeQuery();
 
-                //IF QUE RECORRERA TODO NUESTROS REGISTROS BUSCANDO LOS VALORES DE LA LINEA 49 Y 50.
+                //IF QUE RECORRERA TODO NUESTROS REGISTROS BUSCANDO LOS VALORES DE LA LINEA 44 Y 45.
                 if (rs.next()) {
                     pst = conexion.prepareStatement("UPDATE usuario SET ultimaSesion_us =? WHERE user_us=?");
                     pst.setString(1, ultimaSesion);
-                    pst.setString(2, usuario);  //Marcara posible error.
+                    pst.setString(2, usuario);
                     pst.executeUpdate();
 
                     //SI LOS ENCUENTRA ARROJARA EL SIGUIENTE MENSAJE POR EL MOMENTO, HABRA MODIFICACIONES DESPUES.

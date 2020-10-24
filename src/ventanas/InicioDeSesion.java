@@ -11,7 +11,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
 
     //ATRIBUTO ESTATICO DE LA GUI INICIOSESION PARA PASAR SU VALOR AL MENU PRINCIPAL.
     public static String usuario;
-
+    
     public InicioDeSesion() {
         initComponents();
         //PARA QUE EL USUARIO NO PUEDA HACER GRANDE LA PANTALLA DEL LOGIN.
@@ -46,6 +46,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        txtUsuario.setToolTipText("");
         txtUsuario.setBorder(null);
         txtUsuario.setMaximumSize(new java.awt.Dimension(20, 50));
         txtUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -54,6 +55,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 235, 171, 34));
+        txtUsuario.getAccessibleContext().setAccessibleName("");
 
         txtContraseña.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         txtContraseña.setBorder(null);
@@ -144,7 +146,8 @@ public class InicioDeSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_txtContraseñaActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        // TODO add your handling code here:
+        RegistroUsuarios ru = new RegistroUsuarios();
+        ru.setVisible(true);
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
