@@ -110,6 +110,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGAbout.setContentAreaFilled(false);
         btnGAbout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGAbout.setFocusable(false);
+        btnGAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGAboutActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGAbout, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 152, 145, 147));
 
         btnSalir.setFont(new java.awt.Font("Javanese Text", 1, 14)); // NOI18N
@@ -197,6 +202,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAboutActionPerformed
+
+    private void btnGAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAboutActionPerformed
+        // TODO add your handling code here:
+        AboutTeam a = new AboutTeam();
+        a.setVisible(true);
+    }//GEN-LAST:event_btnGAboutActionPerformed
 
     /**
      * @param args the command line arguments
