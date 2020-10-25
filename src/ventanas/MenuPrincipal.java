@@ -44,6 +44,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent evt) {
                 JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
+                AboutTeam a = new AboutTeam();
+                a.setVisible(true);
             }
         });
     }
@@ -89,6 +91,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGAyuda.setContentAreaFilled(false);
         btnGAyuda.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGAyuda.setFocusPainted(false);
+        btnGAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGAyudaActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGAyuda, new org.netbeans.lib.awtextra.AbsoluteConstraints(427, 152, 145, 148));
 
         btnGLecciones.setBorder(null);
@@ -205,9 +212,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void btnGAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAboutActionPerformed
         // TODO add your handling code here:
+        JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
         AboutTeam a = new AboutTeam();
         a.setVisible(true);
     }//GEN-LAST:event_btnGAboutActionPerformed
+
+    private void btnGAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAyudaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGAyudaActionPerformed
 
     /**
      * @param args the command line arguments
