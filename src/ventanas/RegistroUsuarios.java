@@ -2,11 +2,8 @@ package ventanas;
 
 import clases.TextPrompt;
 import clases.Usuario;
+import javax.swing.JOptionPane;
 
-/**
- *
- * @author Miguel Ruiz
- */
 public class RegistroUsuarios extends javax.swing.JFrame {
 
     public RegistroUsuarios() {
@@ -22,6 +19,7 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         TextPrompt nombreTransparente = new TextPrompt("Nombre", txtNombre);
         TextPrompt apellidosTransparente = new TextPrompt("Apellidos", txtApellidos);
         TextPrompt contraseñaTransparente = new TextPrompt("Contraseña", txtPassword);
+        TextPrompt confContraTransparente = new TextPrompt("Confirma tu contraseña", txtPasswordConf);
     }
 
     @SuppressWarnings("unchecked")
@@ -45,11 +43,18 @@ public class RegistroUsuarios extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtNombre.setBorder(null);
         getContentPane().add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 184, 331, 19));
+
+        txtApellidos.setBorder(null);
         getContentPane().add(txtApellidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 214, 331, 19));
+
+        txtCorreo.setBorder(null);
         getContentPane().add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(59, 245, 331, 19));
         txtCorreo.getAccessibleContext().setAccessibleName("");
 
+        txtTelefono.setBorder(null);
         getContentPane().add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 275, 331, 19));
 
         jPanel2.setBackground(new java.awt.Color(255, 196, 59));
@@ -105,7 +110,11 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 310, 30));
+
+        txtUsuario.setBorder(null);
         getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 355, 331, 19));
+
+        txtPassword.setBorder(null);
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 385, 331, 19));
 
         btnRegistrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -117,6 +126,8 @@ public class RegistroUsuarios extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 490, 140, 30));
+
+        txtPasswordConf.setBorder(null);
         getContentPane().add(txtPasswordConf, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 415, 331, 19));
 
         FondoReg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/registro.png"))); // NOI18N
@@ -131,23 +142,26 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         apellidos = txtApellidos.getText(); 
         telefono = txtTelefono.getText(); 
         correo = txtCorreo.getText();
+        
+        //CODIGO PARA PASAR EN TEXTO LO QUE SE SELECCIONA DE LOS RADIO BOTONES.
         if(M.isSelected()){
             genero = "M";
         }else if(F.isSelected()){
             genero = "F";
         }
+        
+        //IF PARA CONFIRMAR SI LA CONTRASEÑA LA ESCRIBIO BIEN.
         usuario = txtUsuario.getText(); 
-        password = txtPassword.getText();
-        //CREAMOS OBJETO DE LA CLASE USUARIO
-        Usuario u = new Usuario(nombre, apellidos, correo, telefono, genero, usuario, password);
-        u.registraUsuarios();
-        //LIMPIAR CAMPOS
-        txtApellidos.setText("");
-        txtCorreo.setText("");
-        txtNombre.setText("");
-        txtPassword.setText("");
-        txtUsuario.setText("");
-        txtTelefono.setText("");
+        password = txtPassword.getText(); 
+        if(usuario.equals(password)){
+            //CREAMOS OBJETO DE LA CLASE USUARIO
+            Usuario u = new Usuario(nombre, apellidos, correo, telefono, genero, usuario, password);
+            u.registraUsuarios();
+        } else {
+            JOptionPane.showMessageDialog(null, "Contraseña NO confirmada.");
+            txtPassword.setText("");
+            txtPasswordConf.setText("");
+        }    
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void MActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MActionPerformed
