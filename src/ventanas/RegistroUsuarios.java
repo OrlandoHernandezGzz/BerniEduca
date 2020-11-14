@@ -162,8 +162,10 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         
         //IF PARA CONFIRMAR SI LA CONTRASEÑA LA ESCRIBIO BIEN.
         usuario = txtUsuario.getText(); 
-        password = txtPassword.getText(); 
-        if(usuario.equals(password)){
+        password = txtPassword.getText();
+        String passwordConf = txtPasswordConf.getText();
+        
+        if(password.equals(passwordConf)){
             //CREAMOS OBJETO DE LA CLASE USUARIO
             Usuario u = new Usuario(nombre, apellidos, correo, telefono, genero, usuario, password);
             u.registraUsuarios();
