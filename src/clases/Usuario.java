@@ -88,9 +88,6 @@ public class Usuario {
         this.genero = genero;
     }
 
-   
-
-    
     //METODO PARA REGISTRAR USUARIOS.
     public void registraUsuarios(){
         if(!nombre.equals("") && !apellidos.equals("") && !correo.equals("") && !telefono.equals("") && !genero.equals("") && !usuario.equals("") && !password.equals("")){
@@ -114,6 +111,11 @@ public class Usuario {
         }else{
             JOptionPane.showMessageDialog(null, "Debe de llenar todos los campos!");
         }
+    }
+    
+    //METODO PARA MODIFICAR USUARIOS.
+    public void modificarUsuarios(){
+        
     }
     
 }
