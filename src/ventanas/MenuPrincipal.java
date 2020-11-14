@@ -84,7 +84,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(getIconImage());
-        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnGAyuda.setBorder(null);
@@ -111,6 +110,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGPerfil.setContentAreaFilled(false);
         btnGPerfil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGPerfil.setFocusPainted(false);
+        btnGPerfil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGPerfilActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGPerfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 150, 145, 150));
 
         btnGAbout.setBorder(null);
@@ -221,6 +225,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnGAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAyudaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnGAyudaActionPerformed
+
+    private void btnGPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGPerfilActionPerformed
+        PerfilUsuario perfil = new PerfilUsuario();
+        perfil.setVisible(true);
+    }//GEN-LAST:event_btnGPerfilActionPerformed
 
     /**
      * @param args the command line arguments

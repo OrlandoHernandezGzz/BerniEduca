@@ -2,6 +2,8 @@ package ventanas;
 
 import clases.TextPrompt;
 import clases.Usuario;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 public class RegistroUsuarios extends javax.swing.JFrame {
@@ -42,6 +44,7 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         FondoReg = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconImage(getIconImage());
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtNombre.setBorder(null);
@@ -136,6 +139,13 @@ public class RegistroUsuarios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
+    @Override
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/logo.png"));
+        return retValue;
+    }
+     
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         String nombre, apellidos, telefono, correo, genero = "", usuario, password;
         nombre = txtNombre.getText(); 
