@@ -9,20 +9,28 @@ import java.awt.Toolkit;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 
 public class PerfilUsuario extends javax.swing.JFrame {
 
     //VARIABLE PARA IDENTIFICAR EL GENERO Y EL USUARIO DEL USUARIO QUE INICIO SESION.
     String gen = "";
+    //String user1 = "miguel";
     String user1 = InicioDeSesion.usuario;
+    Statement stmt =null;
+    String iduser = "";
 
     public PerfilUsuario() {
         initComponents();
         setTitle("Perfil De " + user1);
         setLocationRelativeTo(null);
         setResizable(false);
+        ObtenerId();
+        JOptionPane.showMessageDialog(null, "El id del usuario es: "+iduser);
         colocaImgPerfil();
+        ConsultaDatos();
     }
     
     //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
@@ -172,8 +180,87 @@ public class PerfilUsuario extends javax.swing.JFrame {
         txtPassword.setEnabled(false);
         btnGuardar.setEnabled(false);
         btnModificar.setEnabled(true);
+        Guardar();
     }//GEN-LAST:event_btnGuardarActionPerformed
 
+    public void ObtenerId(){
+        Connection conexion = Conexion.getConnection();
+        try {
+            //PREPARAMOS SENTENCIA PARA MANDAR A CONSULTAR A NUESTRA BASE DE DATOS.
+            PreparedStatement pst = conexion.prepareStatement("SELECT idUsuario FROM usuario where  user_us = ?");
+            pst.setString(1, user1);
+            ResultSet rs = pst.executeQuery();
+            if(rs.next()){
+                iduser = rs.getString("idUsuario");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }          
+    }
+    
+    public void ConsultaDatos(){
+        Connection conexion = Conexion.getConnection();
+        ResultSet rs = null;
+        String sql2 = "Select nombre_us,apellidos_us,correo_us,telefono_us,gen_us,user_us,password_us FROM usuario where user_us = '"+user1+"'";
+        try{
+        stmt = conexion.createStatement();
+        rs = stmt.executeQuery(sql2);
+        while(rs.next()){
+                String nu = rs.getString("nombre_us");
+                String au = rs.getString("apellidos_us");
+                String cu = rs.getString("correo_us");
+                String tu = rs.getString("telefono_us");
+                String gu = rs.getString("gen_us");
+                String uu = rs.getString("user_us");
+                String pu = rs.getString("password_us");
+                
+        txtNombre.setText(nu);
+        txtApellidos.setText(au);
+        txtCorreo.setText(cu);
+        txtTelefono.setText(tu);
+        //cbGenero.setText(gu);
+        txtUsuario.setText(uu);
+        txtPassword.setText(pu);
+        
+        }
+        } catch (SQLException e) {
+            System.out.println(e);
+            System.out.println("Hola jeje");
+        }
+    }
+        
+    public void Guardar(){
+        Connection conexion = Conexion.getConnection();
+        String cadena1, cadena2, cadena3, cadena4,cadena5,cadena6,cadena7;    
+        cadena1 = txtNombre.getText(); //Nombre 
+        cadena2 = txtApellidos.getText();//Apellidos
+        cadena3 = txtCorreo.getText();//Correo
+        cadena4 = txtTelefono.getText();//Telefono
+        cadena5 = txtUsuario.getText();//Usuario
+        cadena6 = txtPassword.getText();//Password
+        if (txtNombre.getText().equals("")) {
+           javax.swing.JOptionPane.showMessageDialog(this,"El campo no puede estar vacío\n Actualice el dato deseado en el campo correspondiente","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }else {
+            try {
+                stmt = conexion.createStatement();
+                //ResultSet rs = stmt.executeQuery("select * from usuario where idUsuario = '"+iduser.getText()+"'");
+                ResultSet rs = stmt.executeQuery("select * from usuario where user_us = '"+user1+"'");
+
+                if(rs.next()==false){
+                    javax.swing.JOptionPane.showMessageDialog(this,"No existe un registro con ese numero de empleado!","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                        //stmt.executeUpdate("update usuario set nombre_us = '"+cadena1+"',apellidos_us = '"+cadena2+"', correo_us = '"+cadena3+"', telefono_us = '"+cadena4+"', user_us = '"+cadena5+"', password_us = '"+cadena6+"' where idUsuario = '"+iduser.getText()+"' "); 
+                        stmt.executeUpdate("update usuario set nombre_us = '"+cadena1+"',apellidos_us = '"+cadena2+"', correo_us = '"+cadena3+"', telefono_us = '"+cadena4+"', user_us = '"+cadena5+"', password_us = '"+cadena6+"' where user_us = '"+user1+"'");
+
+                        System.out.println("Los valores han sido Actualizados"); 
+                        javax.swing.JOptionPane.showMessageDialog(this,"Actualizado correctamente!","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
+               }
+            }catch (Exception e) {
+            }
+        }
+    }
+        
     private void colocaImgPerfil() {
         //CON ESTA LINEA DE CODIGO, LE ESTAMOS DICIENDO QUE NOS ABRA LA CONEXION A LA BASE DE DATOS.
         Connection conexion = Conexion.getConnection();
