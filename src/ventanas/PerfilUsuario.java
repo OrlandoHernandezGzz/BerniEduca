@@ -10,8 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.swing.JOptionPane;
-
 
 public class PerfilUsuario extends javax.swing.JFrame {
 
@@ -28,7 +26,6 @@ public class PerfilUsuario extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         ObtenerId();
-        JOptionPane.showMessageDialog(null, "El id del usuario es: "+iduser);
         colocaImgPerfil();
         ConsultaDatos();
     }
@@ -200,11 +197,10 @@ public class PerfilUsuario extends javax.swing.JFrame {
     
     public void ConsultaDatos(){
         Connection conexion = Conexion.getConnection();
-        ResultSet rs = null;
         String sql2 = "Select nombre_us,apellidos_us,correo_us,telefono_us,gen_us,user_us,password_us FROM usuario where user_us = '"+user1+"'";
         try{
         stmt = conexion.createStatement();
-        rs = stmt.executeQuery(sql2);
+        ResultSet rs = stmt.executeQuery(sql2);
         while(rs.next()){
                 String nu = rs.getString("nombre_us");
                 String au = rs.getString("apellidos_us");
@@ -218,14 +214,13 @@ public class PerfilUsuario extends javax.swing.JFrame {
         txtApellidos.setText(au);
         txtCorreo.setText(cu);
         txtTelefono.setText(tu);
-        //cbGenero.setText(gu);
+        cbGenero.setSelectedItem(gu);   //Linea de codigo para mostrar el valor de la base de datos en el primer item del combo.
         txtUsuario.setText(uu);
         txtPassword.setText(pu);
         
         }
-        } catch (SQLException e) {
-            System.out.println(e);
-            System.out.println("Hola jeje");
+        } catch (SQLException error) {
+            System.out.println("Error en la consulta de datos" + error);
         }
     }
         
@@ -238,6 +233,8 @@ public class PerfilUsuario extends javax.swing.JFrame {
         cadena4 = txtTelefono.getText();//Telefono
         cadena5 = txtUsuario.getText();//Usuario
         cadena6 = txtPassword.getText();//Password
+        cadena7 = cbGenero.getSelectedItem().toString();//Genero
+        
         if (txtNombre.getText().equals("")) {
            javax.swing.JOptionPane.showMessageDialog(this,"El campo no puede estar vacío\n Actualice el dato deseado en el campo correspondiente","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
         }else {
@@ -251,14 +248,20 @@ public class PerfilUsuario extends javax.swing.JFrame {
                 }
                 else{
                         //stmt.executeUpdate("update usuario set nombre_us = '"+cadena1+"',apellidos_us = '"+cadena2+"', correo_us = '"+cadena3+"', telefono_us = '"+cadena4+"', user_us = '"+cadena5+"', password_us = '"+cadena6+"' where idUsuario = '"+iduser.getText()+"' "); 
-                        stmt.executeUpdate("update usuario set nombre_us = '"+cadena1+"',apellidos_us = '"+cadena2+"', correo_us = '"+cadena3+"', telefono_us = '"+cadena4+"', user_us = '"+cadena5+"', password_us = '"+cadena6+"' where user_us = '"+user1+"'");
-
+                        stmt.executeUpdate("update usuario set nombre_us = '"+cadena1+"',apellidos_us = '"+cadena2+"', correo_us = '"+cadena3+"', telefono_us = '"+cadena4+"', user_us = '"+cadena5+"', password_us = '"+cadena6+"', gen_us = '"+cadena7+"' where user_us = '"+user1+"'");
                         System.out.println("Los valores han sido Actualizados"); 
                         javax.swing.JOptionPane.showMessageDialog(this,"Actualizado correctamente!","AVISO!",javax.swing.JOptionPane.INFORMATION_MESSAGE);
                }
-            }catch (Exception e) {
+            }catch (SQLException error) {
+                System.out.println("Error en el boton guardar" + error);
             }
         }
+        
+        //PARA CAMBIAR EL TITULO DE LA GUI AL MODIFICAR LOS DATOS DE LA BASE DE DATOS
+        InicioDeSesion.usuario =cadena5;
+        user1=cadena5;
+        setTitle("Perfil De " + user1);
+        
     }
         
     private void colocaImgPerfil() {
@@ -291,16 +294,13 @@ public class PerfilUsuario extends javax.swing.JFrame {
                 }
             }
             
-        } catch (SQLException e) {
-            System.out.println(e);
+        } catch (SQLException error) {
+            System.out.println("Error en la imagen de perfil" + error);
         }
         
 
     }
 
-    
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

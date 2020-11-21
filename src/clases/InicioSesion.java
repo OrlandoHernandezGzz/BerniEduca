@@ -10,23 +10,24 @@ import ventanas.MenuPrincipal;
 public class InicioSesion extends Usuario {
 
     //DECLARAMOS NUESTROS ATRIBUTOS.
-    private String ultimaSesion;
+    private String inicioSesion;
     public static boolean cerrarLogin = false;  //atributo estatico para cerrar la interfaz inicio de sesion. 
     
     
     //METODO CONSTRUCTOR QUE INICIALIZARA LOS ATRIBUTOS DE NUESTRA CLASE DEPENDIENDO LOS PARAMETROS QUE DE EL USUARIO.
-    public InicioSesion(String usuario, String password, String ultimaSesion) {
+    //Que nos pasara tambien la fecha de inicio de sesion.
+    public InicioSesion(String usuario, String password, String inicioSesion) {
         super(usuario, password);
-        this.ultimaSesion = ultimaSesion;
+        this.inicioSesion = inicioSesion;
     }
-
+   
     //METODOS GETTERS AND SETTERS.
-    public String getUltimaSesion() {
-        return ultimaSesion;
+    public String getInicioSesion() {
+        return inicioSesion;
     }
 
-    public void setUltimaSesion(String ultimaSesion) {
-        this.ultimaSesion = ultimaSesion;
+    public void setInicioSesion(String inicioSesion) {
+        this.inicioSesion = inicioSesion;
     }
 
     //METODO PARA INGRESAR AL MENU PRINCIPAL, DEPENDIENDO SU USUARIO Y CONTRASEÑA.
@@ -48,8 +49,8 @@ public class InicioSesion extends Usuario {
 
                 //IF QUE RECORRERA TODO NUESTROS REGISTROS BUSCANDO LOS VALORES DE LA LINEA 44 Y 45.
                 if (rs.next()) {
-                    pst = conexion.prepareStatement("UPDATE usuario SET ultimaSesion_us =? WHERE user_us=?");
-                    pst.setString(1, ultimaSesion);
+                    pst = conexion.prepareStatement("UPDATE usuario SET inicioSesion_us =? WHERE user_us=?");
+                    pst.setString(1, inicioSesion);
                     pst.setString(2, usuario);
                     pst.executeUpdate();
 

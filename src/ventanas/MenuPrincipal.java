@@ -1,9 +1,13 @@
 package ventanas;
 
+import clases.Usuario;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -13,7 +17,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     //VARIABLE PARA IDENTIFICAR EL USUARIO QUE INICIO SESION.
     String user = InicioDeSesion.usuario;
-
+    
     //VARIABLES DE BARRA
     JMenuBar barra;
     JMenu menu_perfil;
@@ -196,6 +200,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
+       //CREAMOS UNA VARIABLE QUE CAPTURE LA FECHA Y HORA DE LA COMPUTADORA.
+        Date date = new Date();
+        DateFormat fechaHora2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        //INSTANCIAMOS NUESTRA CLASE INICIOSESION PARA PASARLE POR PARAMETROS LO QUE DIJITE EL USUARIO. 
+        Usuario cerrarSesion = new Usuario(fechaHora2.format(date));
+       
+        //LLAMAMOS EL METODO CERRAR SESION.
+        cerrarSesion.cerrarSesionUsuario();
+        
         System.exit(0);
     }//GEN-LAST:event_btnSalirActionPerformed
 
