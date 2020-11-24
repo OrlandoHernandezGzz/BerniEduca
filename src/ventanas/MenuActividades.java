@@ -1,6 +1,7 @@
 package ventanas;
 
 import java.awt.CardLayout;
+import javax.swing.ImageIcon;
 import javax.swing.SwingUtilities;
 
 public class MenuActividades extends javax.swing.JFrame {
@@ -20,6 +21,25 @@ public class MenuActividades extends javax.swing.JFrame {
         setResizable(false);
         //PARA MOSTRAR EL TITULO DE LA VENTANA.
         setTitle("Menú De Actividades");
+        
+        //PARA AGREGAR IMAGENES A LOS BOTONES.
+        ImageIcon imgAct1 = new ImageIcon("src/img/iconoAct.png");
+        btnAct1.setIcon(imgAct1);
+        ImageIcon imgEj1 = new ImageIcon("src/img/iconoLeccion.png");
+        btnEj1.setIcon(imgEj1);
+        ImageIcon imgAct2 = new ImageIcon("src/img/iconoAct.png");
+        btnAct2.setIcon(imgAct2);
+        ImageIcon imgEj2 = new ImageIcon("src/img/iconoLeccion.png");
+        btnEj2.setIcon(imgEj2);
+        ImageIcon imgAct3 = new ImageIcon("src/img/iconoAct.png");
+        btnAct3.setIcon(imgAct3);
+        ImageIcon imgEj3 = new ImageIcon("src/img/iconoLeccion.png");
+        btnEj3.setIcon(imgEj3);
+        ImageIcon imgAct4 = new ImageIcon("src/img/iconoAct.png");
+        btnAct4.setIcon(imgAct4);
+        ImageIcon imgEj4 = new ImageIcon("src/img/iconoLeccion.png");
+        btnEj4.setIcon(imgEj4);
+          
         //A NUESTRO PANEL QUE NOS MUESTRARA TODAS LAS ACTIVIDADES ESTAMOS HACIENDO CASTEO PARA HACERLO TIPO CARDLAYOUT
         vista = (CardLayout) panelActividades.getLayout();
     }
@@ -30,15 +50,14 @@ public class MenuActividades extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         menu = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         btnEj1 = new javax.swing.JToggleButton();
         btnAct1 = new javax.swing.JToggleButton();
-        btnEj2 = new javax.swing.JToggleButton();
         btnAct2 = new javax.swing.JToggleButton();
         btnEj3 = new javax.swing.JToggleButton();
         btnAct3 = new javax.swing.JToggleButton();
         btnEj4 = new javax.swing.JToggleButton();
         btnAct4 = new javax.swing.JToggleButton();
+        btnEj2 = new javax.swing.JToggleButton();
         panelActividades = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -46,14 +65,11 @@ public class MenuActividades extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 153, 102));
 
         menu.setBackground(new java.awt.Color(255, 153, 102));
-        menu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 5));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("MENÚ ACTIVIDADES");
-
-        btnEj1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lessons256_24926.png"))); // NOI18N
         btnEj1.setText("EJEMPLO 1");
+        btnEj1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEj1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnEj1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnEj1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEj1ActionPerformed(evt);
@@ -61,65 +77,96 @@ public class MenuActividades extends javax.swing.JFrame {
         });
 
         btnAct1.setText("ACTIVIDAD 1");
+        btnAct1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAct1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnAct1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         btnAct1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAct1ActionPerformed(evt);
             }
         });
 
-        btnEj2.setText("EJEMPLO 2");
-
         btnAct2.setText("ACTIVIDAD 2");
+        btnAct2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAct2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnAct2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btnEj3.setText("EJEMPLO 3");
+        btnEj3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEj3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnEj3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btnAct3.setText("ACTIVIDAD 3");
+        btnAct3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAct3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnAct3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btnEj4.setText("EJEMPLO 4");
+        btnEj4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEj4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnEj4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         btnAct4.setText("ACTIVIDAD 4");
+        btnAct4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnAct4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnAct4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        btnEj2.setText("EJEMPLO 2");
+        btnEj2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnEj2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        btnEj2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout menuLayout = new javax.swing.GroupLayout(menu);
         menu.setLayout(menuLayout);
         menuLayout.setHorizontalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(btnEj2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAct2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnEj3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAct4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnEj4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnEj1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(btnAct1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnEj2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEj1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnAct1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(menuLayout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAct2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(menuLayout.createSequentialGroup()
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnEj3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnEj4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnAct4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnAct3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         menuLayout.setVerticalGroup(
             menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLayout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(btnEj1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAct1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEj2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAct2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEj3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAct3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnEj4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAct4, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnEj1, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btnAct1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEj2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAct2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnEj3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAct3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAct4, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
+                    .addComponent(btnEj4, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                .addGap(39, 39, 39))
         );
 
         panelActividades.setBackground(new java.awt.Color(255, 153, 102));
+        panelActividades.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MENÚ DE APRENDIZAJE.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
         panelActividades.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -127,25 +174,27 @@ public class MenuActividades extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panelActividades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(panelActividades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(panelActividades, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(panelActividades, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -204,7 +253,6 @@ public class MenuActividades extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
                 new MenuActividades().setVisible(true);
             }
@@ -220,7 +268,6 @@ public class MenuActividades extends javax.swing.JFrame {
     private javax.swing.JToggleButton btnEj2;
     private javax.swing.JToggleButton btnEj3;
     private javax.swing.JToggleButton btnEj4;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel menu;
     private javax.swing.JPanel panelActividades;
