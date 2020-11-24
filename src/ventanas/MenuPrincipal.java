@@ -53,6 +53,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 a.setVisible(true);
             }
         });
+        //EVENTOS DEL MENU
+        menuItem_tutorial.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                //CODIGO PARA ABRIR EL PDF DE NUESTRO MANUAL USUARIO.
+                try {
+                    Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\resumenEQ4.pdf");
+                } catch (IOException e) {
+                    JOptionPane.showMessageDialog(null, "Error en el archivo pdf" + e);
+                }
+            }
+        });
     }
 
     public MenuPrincipal() {
@@ -228,7 +240,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLeccionesActionPerformed
 
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
-        // TODO add your handling code here:
+        //CODIGO PARA ABRIR EL PDF DE NUESTRO MANUAL USUARIO.
+        try {
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\resumenEQ4.pdf");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error en el archivo pdf" + e);
+        }
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
@@ -245,7 +262,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnGAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAyudaActionPerformed
         //CODIGO PARA ABRIR EL PDF DE NUESTRO MANUAL USUARIO.
         try {
-            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "C:\\Users\\PROPIETARIO\\Desktop\\BerniEduca\\src\\ManualUser\\resumenEQ4.pdf");
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\resumenEQ4.pdf");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Error en el archivo pdf" + e);
         }
