@@ -168,7 +168,7 @@ public class MenuActividades extends javax.swing.JFrame {
         );
 
         panelActividades.setBackground(new java.awt.Color(255, 153, 102));
-        panelActividades.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MENÚ DE APRENDIZAJE.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 18), new java.awt.Color(0, 0, 0))); // NOI18N
+        panelActividades.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "MENÚ DE APRENDIZAJE.", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Georgia", 1, 18))); // NOI18N
         panelActividades.setLayout(new java.awt.CardLayout());
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -262,6 +262,7 @@ public class MenuActividades extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MenuActividades().setVisible(true);
             }
