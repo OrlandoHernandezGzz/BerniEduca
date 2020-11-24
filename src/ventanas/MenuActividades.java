@@ -52,6 +52,7 @@ public class MenuActividades extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("MENÚ ACTIVIDADES");
 
+        btnEj1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lessons256_24926.png"))); // NOI18N
         btnEj1.setText("EJEMPLO 1");
         btnEj1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +60,6 @@ public class MenuActividades extends javax.swing.JFrame {
             }
         });
 
-        btnAct1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoAct.png"))); // NOI18N
         btnAct1.setText("ACTIVIDAD 1");
         btnAct1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
