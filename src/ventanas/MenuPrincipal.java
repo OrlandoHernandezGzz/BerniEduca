@@ -107,6 +107,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         btnGLecciones.setContentAreaFilled(false);
         btnGLecciones.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnGLecciones.setFocusPainted(false);
+        btnGLecciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGLeccionesActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnGLecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(237, 153, 145, 148));
 
         btnGPerfil.setBorder(null);
@@ -244,6 +249,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         PerfilUsuario perfil = new PerfilUsuario();
         perfil.setVisible(true);
     }//GEN-LAST:event_btnGPerfilActionPerformed
+
+    private void btnGLeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGLeccionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGLeccionesActionPerformed
 
     /**
      * @param args the command line arguments
