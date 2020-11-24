@@ -29,6 +29,9 @@ public class PnEj1 extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 153, 102));
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("HOLA MUNDO ESTE ES EL EJEMPLO 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
