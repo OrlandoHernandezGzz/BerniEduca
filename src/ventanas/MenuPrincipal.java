@@ -5,6 +5,7 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -242,7 +243,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGAboutActionPerformed
 
     private void btnGAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAyudaActionPerformed
-        // TODO add your handling code here:
+        //CODIGO PARA ABRIR EL PDF DE NUESTRO MANUAL USUARIO.
+        try {
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "C:\\Users\\PROPIETARIO\\Desktop\\BerniEduca\\src\\ManualUser\\resumenEQ4.pdf");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Error en el archivo pdf" + e);
+        }
     }//GEN-LAST:event_btnGAyudaActionPerformed
 
     private void btnGPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGPerfilActionPerformed
