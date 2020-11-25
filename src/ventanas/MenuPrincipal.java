@@ -272,7 +272,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
         //CODIGO PARA ABRIR EL PDF DE NUESTRO MANUAL USUARIO.
         try {
-            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\resumenEQ4.pdf");
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\manual_usuario.pdf");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Error en el archivo pdf" + e);
         }
@@ -293,7 +293,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnGAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAyudaActionPerformed
         //CODIGO PARA ABRIR EL PDF DE NUESTRO MANUAL USUARIO.
         try {
-            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\resumenEQ4.pdf");
+            Runtime.getRuntime().exec("rundll32 url.dll, FileProtocolHandler " + "src\\ManualUser\\manual_usuario.pdf");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, "Error en el archivo pdf" + e);
         }
