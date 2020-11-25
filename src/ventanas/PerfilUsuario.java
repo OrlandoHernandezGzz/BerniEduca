@@ -6,10 +6,12 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import clases.Conexion;
 import java.awt.Toolkit;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 public class PerfilUsuario extends javax.swing.JFrame {
 
@@ -19,7 +21,10 @@ public class PerfilUsuario extends javax.swing.JFrame {
     String user1 = InicioDeSesion.usuario;
     Statement stmt =null;
     String iduser = "";
-
+    String titulos[] = {"idActividad","nom_act","intento_act"};
+    String fila[] = new String[3];
+    DefaultTableModel modelo;
+    
     public PerfilUsuario() {
         initComponents();
         setTitle("Perfil De " + user1);
@@ -34,6 +39,20 @@ public class PerfilUsuario extends javax.swing.JFrame {
                 FondoPerfil.getHeight(), Image.SCALE_DEFAULT));
         //Agregamos la imagen ya escalable al JLabel.
         FondoPerfil.setIcon(wallpaperScaled);
+//        con = DriverManager.getConnection(url,usuario,contraseña);
+//                if(con!=null)
+//                    System.out.println("Se ha estableciso una conexion con la base de datos"+"\n"+url);
+//                stmt = con.createStatement();
+//                ResultSet rs = stmt.executeQuery("Select* from empleados");
+//        modelo = new DefaultTableModel(null,titulos);
+//                while(rs.next()){
+//                    fila[0]=rs.getString("id_empleados");
+//                    fila[1]=rs.getString("Nombre");
+//                    fila[2]=rs.getString("Apellido_Paterno");
+//                    
+//                    modelo.addRow(fila);
+//                    
+//                }
     }
     
     //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
@@ -57,6 +76,8 @@ public class PerfilUsuario extends javax.swing.JFrame {
         txtTelefono = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbl_progreso = new javax.swing.JTable();
         FondoPerfil = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -122,6 +143,26 @@ public class PerfilUsuario extends javax.swing.JFrame {
         });
         getContentPane().add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(624, 315, 161, 35));
 
+        tbl_progreso.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"1", "Introducción a la Multiplicación", "2"}
+            },
+            new String [] {
+                "Numero de Actividad", "Nombre de Actividad", "Intentos"
+            }
+        ));
+        tbl_progreso.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                tbl_progresoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tbl_progresoKeyTyped(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbl_progreso);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 380, 630, 290));
+
         FondoPerfil.setMaximumSize(new java.awt.Dimension(1016, 709));
         FondoPerfil.setMinimumSize(new java.awt.Dimension(1016, 709));
         FondoPerfil.setPreferredSize(new java.awt.Dimension(1016, 709));
@@ -162,6 +203,14 @@ public class PerfilUsuario extends javax.swing.JFrame {
     private void txtTelefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefonoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoActionPerformed
+
+    private void tbl_progresoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbl_progresoKeyPressed
+
+    }//GEN-LAST:event_tbl_progresoKeyPressed
+
+    private void tbl_progresoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tbl_progresoKeyTyped
+        
+    }//GEN-LAST:event_tbl_progresoKeyTyped
 
     public void ObtenerId(){
         Connection conexion = Conexion.getConnection();
@@ -323,6 +372,8 @@ public class PerfilUsuario extends javax.swing.JFrame {
     private javax.swing.JButton btnModificar;
     private javax.swing.JComboBox<String> cbGenero;
     private javax.swing.JLabel imgPerfil;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbl_progreso;
     private javax.swing.JTextField txtApellidos;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtNombre;
