@@ -65,6 +65,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 }
             }
         });
+        //EVENTOS DEL MENU
+        menu_cerrar_sesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
+                AboutTeam a = new AboutTeam();
+                a.setVisible(true);
+            }
+        });
     }
 
     public MenuPrincipal() {
