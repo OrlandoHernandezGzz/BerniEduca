@@ -20,7 +20,7 @@ public class MenuActividades extends javax.swing.JFrame {
         //COMANDO PARA HACER GRANDE LA GUI.
         setExtendedState(MAXIMIZED_BOTH);
         //PARA QUE EL USUARIO NO PUEDA MANIPULAR EL TAMAÑO DE LA GUI.
-        //setResizable(false);
+        setResizable(false);
         //PARA MOSTRAR EL TITULO DE LA VENTANA.
         setTitle("Menú De Actividades");
         
