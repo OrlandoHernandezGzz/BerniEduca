@@ -5,7 +5,9 @@
  */
 package ventanas;
 
+import java.applet.AudioClip;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +22,20 @@ public class PnEj1 extends javax.swing.JPanel {
         initComponents();
         ImageIcon ejemplo1 = new ImageIcon("src/img/Ejemplo1.png");
         lblej1.setIcon(ejemplo1);
+
+        //AGREGAMOS IMAGENES A LOS BOTONES.
+        ImageIcon audio1 = new ImageIcon("src/img/audio.png");
+        btnAudio1.setIcon(audio1);
+
+        ImageIcon audio2 = new ImageIcon("src/img/audio.png");
+        btnAudio2.setIcon(audio2);
+
+        ImageIcon audio3 = new ImageIcon("src/img/audio.png");
+        btnAudio3.setIcon(audio3);
+
+        ImageIcon audio4 = new ImageIcon("src/img/audio.png");
+        btnAudio4.setIcon(audio4);
+
     }
 
     /**
@@ -31,32 +47,99 @@ public class PnEj1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnAudio1 = new javax.swing.JButton();
+        btnAudio2 = new javax.swing.JButton();
+        btnAudio3 = new javax.swing.JButton();
+        btnAudio4 = new javax.swing.JButton();
         lblej1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 102));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnAudio1.setContentAreaFilled(false);
+        btnAudio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudio1ActionPerformed(evt);
+            }
+        });
+        add(btnAudio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 60, 50));
+
+        btnAudio2.setContentAreaFilled(false);
+        btnAudio2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudio2ActionPerformed(evt);
+            }
+        });
+        add(btnAudio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 320, 60, 50));
+
+        btnAudio3.setContentAreaFilled(false);
+        btnAudio3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudio3ActionPerformed(evt);
+            }
+        });
+        add(btnAudio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 60, 50));
+
+        btnAudio4.setContentAreaFilled(false);
+        btnAudio4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudio4ActionPerformed(evt);
+            }
+        });
+        add(btnAudio4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 620, 60, 50));
 
         lblej1.setBackground(new java.awt.Color(0, 0, 0));
         lblej1.setMaximumSize(new java.awt.Dimension(1122, 712));
         lblej1.setMinimumSize(new java.awt.Dimension(1122, 712));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(lblej1, javax.swing.GroupLayout.PREFERRED_SIZE, 1122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(lblej1, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        add(lblej1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1122, 712));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAudio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio1ActionPerformed
+        AudioClip Sound;
+        try {
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio1.wav"));
+            Sound.play();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnAudio1ActionPerformed
+
+    private void btnAudio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio2ActionPerformed
+        AudioClip Sound;
+        try {
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio2.wav"));
+            Sound.play();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnAudio2ActionPerformed
+
+    private void btnAudio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio3ActionPerformed
+        AudioClip Sound;
+        try {
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio3.wav"));
+            Sound.play();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnAudio3ActionPerformed
+
+    private void btnAudio4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio4ActionPerformed
+        AudioClip Sound;
+        try {
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio4.wav"));
+            Sound.play();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }//GEN-LAST:event_btnAudio4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAudio1;
+    private javax.swing.JButton btnAudio2;
+    private javax.swing.JButton btnAudio3;
+    private javax.swing.JButton btnAudio4;
     private javax.swing.JLabel lblej1;
     // End of variables declaration//GEN-END:variables
 }
