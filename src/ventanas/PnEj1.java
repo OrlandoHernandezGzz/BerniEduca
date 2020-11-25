@@ -5,6 +5,8 @@
  */
 package ventanas;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author PROPIETARIO
@@ -16,6 +18,8 @@ public class PnEj1 extends javax.swing.JPanel {
      */
     public PnEj1() {
         initComponents();
+        ImageIcon ejemplo1 = new ImageIcon("src/img/Ejemplo1.png");
+        lblej1.setIcon(ejemplo1);
     }
 
     /**
@@ -27,33 +31,32 @@ public class PnEj1 extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblej1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 153, 102));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("HOLA MUNDO ESTE ES EL EJEMPLO 1");
+        lblej1.setBackground(new java.awt.Color(0, 0, 0));
+        lblej1.setMaximumSize(new java.awt.Dimension(1122, 712));
+        lblej1.setMinimumSize(new java.awt.Dimension(1122, 712));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(259, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(221, 221, 221))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(lblej1, javax.swing.GroupLayout.PREFERRED_SIZE, 1122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(131, 131, 131)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addComponent(lblej1, javax.swing.GroupLayout.PREFERRED_SIZE, 712, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblej1;
     // End of variables declaration//GEN-END:variables
 }
