@@ -24,9 +24,6 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnAudio1">
-      <Properties>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudio1ActionPerformed"/>
       </Events>
@@ -37,9 +34,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="btnAudio2">
-      <Properties>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudio2ActionPerformed"/>
       </Events>
@@ -50,9 +44,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="btnAudio3">
-      <Properties>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudio3ActionPerformed"/>
       </Events>
@@ -63,9 +54,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JButton" name="btnAudio4">
-      <Properties>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
-      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudio4ActionPerformed"/>
       </Events>

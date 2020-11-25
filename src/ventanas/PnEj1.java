@@ -56,7 +56,6 @@ public class PnEj1 extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 153, 102));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnAudio1.setContentAreaFilled(false);
         btnAudio1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAudio1ActionPerformed(evt);
@@ -64,7 +63,6 @@ public class PnEj1 extends javax.swing.JPanel {
         });
         add(btnAudio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 320, 60, 50));
 
-        btnAudio2.setContentAreaFilled(false);
         btnAudio2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAudio2ActionPerformed(evt);
@@ -72,7 +70,6 @@ public class PnEj1 extends javax.swing.JPanel {
         });
         add(btnAudio2, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 320, 60, 50));
 
-        btnAudio3.setContentAreaFilled(false);
         btnAudio3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAudio3ActionPerformed(evt);
@@ -80,7 +77,6 @@ public class PnEj1 extends javax.swing.JPanel {
         });
         add(btnAudio3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 620, 60, 50));
 
-        btnAudio4.setContentAreaFilled(false);
         btnAudio4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAudio4ActionPerformed(evt);
@@ -95,29 +91,36 @@ public class PnEj1 extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAudio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio1ActionPerformed
-        AudioClip Sound;
+        AudioClip sonido;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/C.wav"));
-            Sound.play();
+            sonido = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio1orla.wav"));
+            sonido.play();
+            System.out.println("funciono");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+            System.out.println("no funciono");
         }
     }//GEN-LAST:event_btnAudio1ActionPerformed
 
     private void btnAudio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio2ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/C.wav"));
-            Sound.play();
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio2orla.wav"));
+            Sound.play();            
+
+            System.out.println("funciono jeje");
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
+                        System.out.println("no funciono :(");
+
         }
     }//GEN-LAST:event_btnAudio2ActionPerformed
 
     private void btnAudio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio3ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio3.wav"));
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio3orla.wav"));
             Sound.play();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -127,7 +130,7 @@ public class PnEj1 extends javax.swing.JPanel {
     private void btnAudio4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio4ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio4.wav"));
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio4orla.wav"));
             Sound.play();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
