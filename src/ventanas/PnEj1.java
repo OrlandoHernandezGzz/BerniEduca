@@ -97,7 +97,7 @@ public class PnEj1 extends javax.swing.JPanel {
     private void btnAudio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio1ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio1.wav"));
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/C.wav"));
             Sound.play();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -107,7 +107,7 @@ public class PnEj1 extends javax.swing.JPanel {
     private void btnAudio2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio2ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio2.wav"));
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/C.wav"));
             Sound.play();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -117,7 +117,7 @@ public class PnEj1 extends javax.swing.JPanel {
     private void btnAudio3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio3ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio3.wav"));
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio3.wav"));
             Sound.play();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -127,7 +127,7 @@ public class PnEj1 extends javax.swing.JPanel {
     private void btnAudio4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudio4ActionPerformed
         AudioClip Sound;
         try {
-            Sound = java.applet.Applet.newAudioClip(getClass().getResource("src/audios/audio4.wav"));
+            Sound = java.applet.Applet.newAudioClip(getClass().getResource("/audios/audio4.wav"));
             Sound.play();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
