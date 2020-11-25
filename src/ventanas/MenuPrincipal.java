@@ -24,21 +24,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
     JMenu menu_perfil;
     JMenu menu_ayuda;
     JMenu menu_cerrar_sesion;
-    JMenuItem menuItem_ver_actividad;
+    JMenuItem menuItem_mi_perfil;
     JMenuItem menuItem_tutorial;
     JMenuItem menuItem_about;
+    JMenuItem menuItem_salir;
 
     private void crearMenu() {
         barra = new JMenuBar();
         menu_perfil = new JMenu("Perfil");
         menu_ayuda = new JMenu("Ayuda");
         menu_cerrar_sesion = new JMenu("Cerrar Sesión");
-        menuItem_ver_actividad = new JMenuItem("Ver Actividad");
+        menuItem_mi_perfil = new JMenuItem("Ver mi perfil");
         menuItem_tutorial = new JMenuItem("Tutorial");
         menuItem_about = new JMenuItem("Acerca de Nosotros");
-        menu_perfil.add(menuItem_ver_actividad);
+        menuItem_salir = new JMenuItem("Salir");
+        menu_perfil.add(menuItem_mi_perfil);
         menu_ayuda.add(menuItem_tutorial);
         menu_ayuda.add(menuItem_about);
+        menu_cerrar_sesion.add(menuItem_salir);
         barra.add(menu_perfil);
         barra.add(menu_ayuda);
         barra.add(menu_cerrar_sesion);
@@ -66,12 +69,28 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         //EVENTOS DEL MENU
-        menu_cerrar_sesion.addActionListener(new ActionListener() {
+        menuItem_mi_perfil.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
-                JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
-                AboutTeam a = new AboutTeam();
-                a.setVisible(true);
+                PerfilUsuario perfil = new PerfilUsuario();
+                perfil.setVisible(true);
+            }
+        });
+        //EVENTOS DEL MENU
+        menuItem_salir.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                //CREAMOS UNA VARIABLE QUE CAPTURE LA FECHA Y HORA DE LA COMPUTADORA.
+                Date date = new Date();
+                DateFormat fechaHora2 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+                //INSTANCIAMOS NUESTRA CLASE INICIOSESION PARA PASARLE POR PARAMETROS LO QUE DIJITE EL USUARIO. 
+                Usuario cerrarSesion = new Usuario(fechaHora2.format(date));
+
+                //LLAMAMOS EL METODO CERRAR SESION.
+                cerrarSesion.cerrarSesionUsuario();
+
+                System.exit(0);
             }
         });
     }
@@ -241,11 +260,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalirActionPerformed
 
     private void btnPerfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerfilActionPerformed
-        // TODO add your handling code here:
+        PerfilUsuario perfil = new PerfilUsuario();
+        perfil.setVisible(true);
     }//GEN-LAST:event_btnPerfilActionPerformed
 
     private void btnLeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeccionesActionPerformed
-        // TODO add your handling code here:
+        MenuActividades menuAct = new MenuActividades();
+        menuAct.setVisible(true);
     }//GEN-LAST:event_btnLeccionesActionPerformed
 
     private void btnAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAyudaActionPerformed
@@ -258,11 +279,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAyudaActionPerformed
 
     private void btnAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAboutActionPerformed
-        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
+        AboutTeam a = new AboutTeam();
+        a.setVisible(true);
     }//GEN-LAST:event_btnAboutActionPerformed
 
     private void btnGAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGAboutActionPerformed
-        // TODO add your handling code here:
         JOptionPane.showMessageDialog(MenuPrincipal.this, "Desarrollado por Estudiantes de la FIME", "Acerca de nosotros", JOptionPane.INFORMATION_MESSAGE);
         AboutTeam a = new AboutTeam();
         a.setVisible(true);
@@ -283,7 +305,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnGPerfilActionPerformed
 
     private void btnGLeccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGLeccionesActionPerformed
-        // TODO add your handling code here:
+        MenuActividades menuAct = new MenuActividades();
+        menuAct.setVisible(true);
     }//GEN-LAST:event_btnGLeccionesActionPerformed
 
     /**
