@@ -45,7 +45,7 @@ public class PerfilUsuario extends javax.swing.JFrame {
                 if(conexion!=null)
                     System.out.println("Se ha establecido una conexion con la base de datos"+"\n"+"BerniEduca");
                 stmt = conexion.createStatement();
-                ResultSet rs = stmt.executeQuery("Select* from prog_act");
+                ResultSet rs = stmt.executeQuery("SELECT a.num_act,a.nom_act,p.intento_act FROM prog_act p Join actividad a where idUsuario_fk='"+iduser+"'");
         modelo = new DefaultTableModel(null,titulos);
                 while(rs.next()){
                     fila[0]=rs.getString("num_act");
