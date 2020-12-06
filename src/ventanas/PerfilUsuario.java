@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 
 public class PerfilUsuario extends javax.swing.JFrame {
 
@@ -21,7 +22,7 @@ public class PerfilUsuario extends javax.swing.JFrame {
     String user1 = InicioDeSesion.usuario;
     Statement stmt =null;
     String iduser = "";
-    String titulos[] = {"idActividad","nom_act","intento_act"};
+    String titulos[] = {"Numero de Actividad","Nombre de Actividad","Intentos"};
     String fila[] = new String[3];
     DefaultTableModel modelo;
     
@@ -39,20 +40,28 @@ public class PerfilUsuario extends javax.swing.JFrame {
                 FondoPerfil.getHeight(), Image.SCALE_DEFAULT));
         //Agregamos la imagen ya escalable al JLabel.
         FondoPerfil.setIcon(wallpaperScaled);
-//        con = DriverManager.getConnection(url,usuario,contraseña);
-//                if(con!=null)
-//                    System.out.println("Se ha estableciso una conexion con la base de datos"+"\n"+url);
-//                stmt = con.createStatement();
-//                ResultSet rs = stmt.executeQuery("Select* from empleados");
-//        modelo = new DefaultTableModel(null,titulos);
-//                while(rs.next()){
-//                    fila[0]=rs.getString("id_empleados");
-//                    fila[1]=rs.getString("Nombre");
-//                    fila[2]=rs.getString("Apellido_Paterno");
-//                    
-//                    modelo.addRow(fila);
-//                    
-//                }
+        Connection conexion = Conexion.getConnection();
+        try {
+                if(conexion!=null)
+                    System.out.println("Se ha establecido una conexion con la base de datos"+"\n"+"BerniEduca");
+                stmt = conexion.createStatement();
+                ResultSet rs = stmt.executeQuery("Select* from prog_act");
+        modelo = new DefaultTableModel(null,titulos);
+                while(rs.next()){
+                    fila[0]=rs.getString("num_act");
+                    fila[1]=rs.getString("nom_act");
+                    fila[2]=rs.getString("intento_act");
+                    
+                    modelo.addRow(fila);
+                    
+                }
+                tbl_progreso.setModel(modelo);
+                TableColumn cm = tbl_progreso.getColumn("Numero de Actividad");
+                TableColumn cn = tbl_progreso.getColumn("Nombre de Actividad");
+                TableColumn cd = tbl_progreso.getColumn("Intentos");
+        }catch(SQLException e) {
+            System.out.println(e);
+        }
     }
     
     //CREAMOS METODO SOBREESCRITO PARA ESTABLECER EL ICONO DE NUESTRO SISTEMA.
